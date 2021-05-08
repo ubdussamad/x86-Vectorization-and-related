@@ -1,8 +1,11 @@
 #include <iostream>
 #include <cmath>
 
-// This only work if IEE754 fp is being used for default float
+// This only works if IEE754 fp is being used for default float
 // Just for calculating log, 0.0683365F works for meeeeeeeee.
+
+// I am just using it for taking bianry log.
+// 
 // author: ubussamad
 int ffltest ()  { 
         float num  = 4.568;

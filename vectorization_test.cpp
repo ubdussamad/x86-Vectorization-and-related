@@ -7,9 +7,9 @@
 void bits(float x);
 void bits(u32 x);
 
-// On my CPU (Arrandale (Core i7 4th gen)) unsigned short doesn't works
+// On my CPU (Arrandale (Core i7 4th gen)) unsigned char doesn't works
 // but it also dosent works on godbolt x86gcc so i guess i suck.
-// u32 works fine.
+// unsigned short works fine.
 
 
 typedef unsigned short v4si __attribute__ ((vector_size (4))); // u32 is 2bytes on my system

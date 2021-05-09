@@ -7,7 +7,8 @@
 // I am just using it for taking bianry log.
 //
 // author: ubussamad
-int ffltest()
+float fastFloatLog() __attribute_warn_unused_result__;
+int ffltest() 
 {
     float num = 4.568;
     float stdlog = std::log2f(num);
@@ -18,12 +19,12 @@ int ffltest()
     return 0;
 }
 
-int fastFloatLog()
+float fastFloatLog() 
 {
 
     float min_diff_chi = 0.0;
     float min_diff = 1.0;
-
+    int a __attribute_warn_unused_result__ = 0;
     __builtin_prefetch(&min_diff_chi); // Usually done with irreg accessed arrays
 
     
@@ -51,7 +52,7 @@ int fastFloatLog()
     }
 
     std::cout << min_diff_chi << " | Min diff is: " << min_diff << std::endl;
-    return 0;
+    return min_diff_chi;
 }
 
 int main() {

@@ -27,7 +27,7 @@ int main () {
     c = a + b;
     char out[50];
     
-    sprintf(out, "%.8x", *k);
+    sprintf(out, "0x%.8x", *k);
     std::cout << out << std::endl;
     // std::cout << c[0] << " " << c[1] << " " << std::endl;
 }

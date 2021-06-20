@@ -3,12 +3,13 @@
 
 // This only works if IEE754 fp is being used for default float
 // Just for calculating log, 0.0683365F works for meeeeeeeee.
+// Tryin somethin pahneey
 
 // I am just using it for taking bianry log.
 //
 // author: ubussamad
 float fastFloatLog() __attribute_warn_unused_result__;
-int ffltest() 
+int ffltest()
 {
     float num = 4.568;
     float stdlog = std::log2f(num);
@@ -24,7 +25,7 @@ float fastFloatLog()
 
     float min_diff_chi = 0.0;
     float min_diff = 1.0;
-    int a __attribute_warn_unused_result__ = 0;
+    int a  = 0;
     __builtin_prefetch(&min_diff_chi); // Usually done with irreg accessed arrays
 
     
@@ -37,7 +38,7 @@ float fastFloatLog()
         for (float num = 0.1F; num < 100.0; num += 0.5F)
         {
             float stdlog = std::log2f(num);
-            float nu = ((float)((*(unsigned int *)&num))) / (float)(1 << 23);
+            float nu = ((float)((*(unsigned int *)&num))) / (float)(1 << 23); // Type punning bad :(
             float lg = (nu) + chi - 127;
             avg_diff += std::abs(stdlog - lg);
         }
